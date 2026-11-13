@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Campus Navigation System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Smart Campus <span>Navigation System</span></h1>
+    <p>Find the optimal route across campus using BFS (fewest stops) or UCS (shortest distance).</p>
+  </header>
+
+  <!-- Navigation Bar (Controls) -->
+  <nav class="navbar controls">
+    <label>Start:
+      <select id="start"></select>
+    </label>
+
+    <label>Destination:
+      <select id="end"></select>
+    </label>
+
+    <label>Algorithm:
+      <select id="algo">
+        <option value="bfs">BFS (fewest stops)</option>
+        <option value="ucs" selected>UCS (shortest distance)</option>
+      </select>
+    </label>
+
+    <button id="findBtn" class="primary">&#9654; Find Route</button>
+    <button id="resetBtn" class="secondary">&#8635; Reset Campus</button>
+  </nav>
+
+  <!-- Campus map drawn as a clean box-by-box graph -->
+  <div class="map-container">
+    <svg id="map" viewBox="0 0 820 500"></svg>
+  </div>
+
+  <!-- Route Result displayed below the graph in separate well-designed div sections -->
+  <div id="result" class="result-container">
+    <div class="result-placeholder">
+      Select a start, destination, and algorithm, then click <b>Find Route</b>.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
